@@ -9,8 +9,7 @@
     "test": "ng test --cc ",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "cover": "istanbul cover node_modules/jasmine/bin/jasmine.js",
-    "precommit": "npm test"
+    "cover": "istanbul cover node_modules/jasmine/bin/jasmine.js"
   },
   "private": true,
   "dependencies": {
