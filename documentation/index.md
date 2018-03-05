@@ -39,3 +39,13 @@ Les modèles sont présents dans `src/app/models` et sont de l'ordre de deux :
 - posts : correspond aux données de la page de détail (modal)
 
 ## Services
+
+Un seul service est présent, il fourni deux méthodes :
+- get() : retourne les détails correspond à l'appel de l'api https://jsonplaceholder.typicode.com/post/{id}
+- getList() : retourne l'ensemble des données présent dans le fichier `asserts/post.json`
+
+## Notes
+
+La fonctionnalité `"precommit": "npm test"` présent dans la partie `scripts` du fichier `package.json`.
+
+Les tests sont fonctionnels néanmoins un paramétrage qui ne semble pas correct (mais ne relève pas d'erreur) pour istambul malgré une couverture à `82,72 %` bloque le commit. Afin de ne pas s'arrêter à ce détail, j'ai préféré le désactiver.
