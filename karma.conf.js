@@ -38,6 +38,7 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
+      require('karma-istanbul-threshold'),
       require('@angular/cli/plugins/karma')
     ],
     preprocessors: {
@@ -48,7 +49,7 @@ module.exports = function (config) {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     coverageIstanbulReporter: {
-      reports: [ 'html', 'lcovonly' ],
+      reports: [ 'html', 'lcovonly', 'json' ],
       fixWebpackSourcePaths: true
     },
     angularCli: {
@@ -58,7 +59,8 @@ module.exports = function (config) {
       'progress', 
       'kjhtml', 
       'coverage',
-      'coverage-istanbul'
+      'coverage-istanbul',
+      'istanbul-threshold'
     ],
     coverageReporter: {
       reporters:[
@@ -85,19 +87,19 @@ module.exports = function (config) {
       thresholds: {
         emitWarning: false,
         global: {
-          statements: 100,
-          lines: 100,
-          branches: 100,
-          functions: 100
+          statements: 50,
+          lines: 50,
+          branches: 50,
+          functions: 50
         },
         each: { // thresholds per file
-          statements: 100,
-          lines: 100,
-          branches: 100,
-          functions: 100,
+          statements: 70,
+          lines: 60,
+          branches: 50,
+          functions: 30,
           overrides: {
             'src/**/*.ts': {
-              statements: 98
+              statements: 70
             }
           }
         }

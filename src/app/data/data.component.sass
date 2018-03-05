@@ -1,0 +1,29 @@
+$break-small: 768px
+$break-medium: 992px
+$break-large: 1200px
+
+@mixin truncate($width: 100%) 
+    max-width: $width
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+  
+.datatable-body
+    @media (max-width: $break-small)
+        @include truncate(50px)
+    @media (min-width: $break-small)
+        @include truncate(50px)
+    @media (min-width: $break-medium)
+        @include truncate(50px)
+    @media (min-width: $break-large)
+        @include truncate(500px)
+
+%table
+    tr 
+        background-color: #FFFAFA
+
+.table-main 
+    @extend %table
+
+    tr:nth-of-type(event)
+        background-color: rgba(0,0,0,.5)
